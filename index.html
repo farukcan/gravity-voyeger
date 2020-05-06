@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Gravity Voyager</title>
+	<style>
+		body {
+		  margin : 0px;
+		  background-color: black;
+		}
+		canvas { position:fixed; top:0; left:0; z-index:1; }
+		label {
+			color: white;
+			z-index: 555;
+			position: absolute;
+			  -webkit-touch-callout: none; /* iOS Safari */
+			  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+			  -khtml-user-select: none;    /* Konqueror */
+			  -moz-user-select: none;      /* Firefox */
+			  -ms-user-select: none;       /* Internet Explorer/Edge */
+			  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+		}
+		input[type=range][orient=vertical]
+		{
+		    writing-mode: bt-lr; /* IE */
+		    -webkit-appearance: slider-vertical; /* WebKit */
+		    width: 8px;
+		    height: 175px;
+		    padding: 0 5px;
+		}
+
+
+		window {
+			position: absolute;
+			background-color: white;
+			color: black;
+			top : 50%;
+			left : 50%;
+			z-index: 900;
+			padding: 20px;
+			-webkit-transform: translate(-50%, -50%);
+  			transform: translate(-50%, -50%);
+		}
+
+	</style>
+</head>
+<body>
+<script src="game.js"></script>
+
+<label style="top:0px"> 
+	Game Speed : <br><input type="range" id="gameSpeed" value="1" max="10" min="0.000001" step="0.000001" />
+	
+</label>
+
+<label style="right:0px;text-align:right"> 
+	<input type="submit" id="resetCam" value="Lock CAM">
+
+<br>
+	<input type="range" id="zoomRange" orient="vertical" value="1" min="0.001" max="1" step="0.001" />
+
+</label>
+
+<label style="bottom:0px;display:none;"> <h3>Debug</h3> <var id="Debug"> Game is not running </var> </label>
+
+
+<label style="bottom:0px;right:20px;text-align:right"">
+	Your are a <var id="MatterType">PLANET</var> 
+	<br>
+	Score : <var id="Score">?</var>
+
+	<input type="submit" onclick="location.reload()" value="restart"/>
+</label>
+
+<window id="window1">
+	<i style="float:right">Contact | e-mail : <a href="mailto:omer@farukcan.net:">omer@farukcan.net</a></i>
+		<br/>
+	<h3> Welcome, Gravity Voyager </h3>
+	<p> * Hold the arrow Keys for change your orbit </p>
+	<p> * If you collide with smaller matter, you will grow up </p>
+	<p> * Roll the mouse whell to zoom in/out </p>
+	<p> * Thanks for testing the alpha version</p>
+
+	Size : <select id="galaxySize">
+		<option value=100>100</option>
+		<option value=200>200</option>
+		<option value=300>300</option>
+		<option value=500>500</option>
+		<option value=1000>1000</option>
+	</select>
+	<input type="submit" id="startButton" value="Create Galaxy">
+
+
+
+</window>
+
+</body>
+</html>
