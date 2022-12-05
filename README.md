@@ -1,4 +1,4 @@
 # gravity-voyeger
 
 # Demo
-https://gravity-voyeger.herokuapp.com/
+https://gravity-voyeger.farukcan.net/
